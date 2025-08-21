@@ -2,10 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  scroll-behavior: smooth;
+html, body, #root, .App {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Hide default scrollbars */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #f3f4f6; /* A light gray background */
+}
+
+/* Custom styles for RainbowKit ConnectButton to make it more compact if needed */
+.rainbowkit-connect-button-wrapper button {
+    padding: 8px 12px;
+    font-size: 14px;
 }
