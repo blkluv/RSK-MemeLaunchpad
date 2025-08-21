@@ -219,24 +219,24 @@ const MemeTokenLaunchpad = () => {
     <div className="min-h-screen bg-white">
       {/* Navigation Bar */}
       <nav className="bg-white shadow-md">
-        <div className="container mx-auto px-4 py-3">
-          <div className="flex justify-between items-center">
+        <div className="container px-4 py-3 mx-auto">
+          <div className="flex items-center justify-between">
             {/* Logo */}
             <div className="flex items-center">
-              <Rocket className="text-orange-500 mr-2" size={28} />
-              <h1 className="text-xl md:text-2xl font-bold text-orange-600 hidden md:block">RSK Meme Token Launchpad</h1>
-              <h1 className="text-xl font-bold text-orange-600 md:hidden">Meme Launch</h1>
+              <Rocket className="mr-2 text-orange-500" size={28} />
+              <h1 className="hidden text-xl font-bold text-orange-600 md:text-2xl md:block">RWA RSK Meme Launchpad</h1>
+              <h1 className="text-xl font-bold text-orange-600 md:hidden">RWA Meme Launch</h1>
             </div>
             
-            <div className="hidden md:flex items-center space-x-4">
+            <div className="items-center hidden space-x-4 md:flex">
               <ConnectButton />
             </div>
             
-            <div className="md:hidden flex items-center">
+            <div className="flex items-center md:hidden">
               <ConnectButton />
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="text-orange-600 ml-2"
+                className="ml-2 text-orange-600"
               >
                 {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
@@ -246,27 +246,27 @@ const MemeTokenLaunchpad = () => {
         
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden bg-white py-2 px-4 shadow-inner">
+          <div className="px-4 py-2 bg-white shadow-inner md:hidden">
             <a href="#create" className="block py-2 text-orange-600 hover:text-orange-700" 
-               onClick={() => setMobileMenuOpen(false)}>Create Token</a>
+               onClick={() => setMobileMenuOpen(false)}>Create RWA Token</a>
             <a href="#launches" className="block py-2 text-orange-600 hover:text-orange-700"
-               onClick={() => setMobileMenuOpen(false)}>Active Launches</a>
+               onClick={() => setMobileMenuOpen(false)}>Active RWA Launches</a>
           </div>
         )}
       </nav>
       
-      <div className="container mx-auto px-4 py-6">
+      <div className="container px-4 py-6 mx-auto">
         {/* Main Content */}
-        <div className="flex flex-col md:flex-row md:space-x-6 space-y-6 md:space-y-0">
+        <div className="flex flex-col space-y-6 md:flex-row md:space-x-6 md:space-y-0">
           {/* Create Token Section */}
-          <div id="create" className="w-full md:w-1/2 bg-white rounded-xl shadow-lg p-6 border border-orange-100">
-            <h2 className="text-2xl font-semibold mb-6 text-orange-600 flex items-center">
+          <div id="create" className="w-full p-6 bg-white border border-orange-100 shadow-lg md:w-1/2 rounded-xl">
+            <h2 className="flex items-center mb-6 text-2xl font-semibold text-orange-600">
               <Rocket className="mr-2 text-orange-500" size={20} />
-              Create Your Meme Token
+              Create Your RWA Meme Token
             </h2>
             <form onSubmit={createTokenLaunch} className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Token Name</label>
+                <label className="block mb-1 text-sm font-medium text-gray-700">RWA Name</label>
                 <input 
                   type="text" 
                   placeholder="e.g. Moon Rocket" 
@@ -278,7 +278,7 @@ const MemeTokenLaunchpad = () => {
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Token Symbol</label>
+                <label className="block mb-1 text-sm font-medium text-gray-700">Token Symbol</label>
                 <input 
                   type="text" 
                   placeholder="e.g. MOON" 
@@ -290,7 +290,7 @@ const MemeTokenLaunchpad = () => {
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Initial Supply</label>
+                <label className="block mb-1 text-sm font-medium text-gray-700">Initial RWA Supply</label>
                 <input 
                   type="number" 
                   placeholder="e.g. 1000000" 
@@ -302,7 +302,7 @@ const MemeTokenLaunchpad = () => {
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Max Supply</label>
+                <label className="block mb-1 text-sm font-medium text-gray-700">Max RWA Supply</label>
                 <input 
                   type="number" 
                   placeholder="e.g. 10000000" 
@@ -314,7 +314,7 @@ const MemeTokenLaunchpad = () => {
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Launch Price (BTC per token)</label>
+                <label className="block mb-1 text-sm font-medium text-gray-700">Launch RWA Price (BTC per token)</label>
                 <input 
                   type="number" 
                   placeholder="e.g. 0.0001" 
@@ -327,33 +327,33 @@ const MemeTokenLaunchpad = () => {
               
               <button 
                 type="submit" 
-                className="w-full bg-orange-500 text-white py-3 rounded-lg hover:bg-orange-600 transition font-medium"
+                className="w-full py-3 font-medium text-white transition bg-orange-500 rounded-lg hover:bg-orange-600"
                 disabled={!address}
               >
                 Launch Token
               </button>
               {!address && (
-                <p className="text-sm text-orange-600 text-center">Connect your wallet to launch a token</p>
+                <p className="text-sm text-center text-orange-600">Connect your wallet to launch a RWA token</p>
               )}
             </form>
           </div>
 
           {/* Active Launches Section */}
-          <div id="launches" className="w-full md:w-1/2 bg-white rounded-xl shadow-lg p-6 border border-orange-100">
-            <h2 className="text-2xl font-semibold mb-6 text-orange-600 flex items-center">
+          <div id="launches" className="w-full p-6 bg-white border border-orange-100 shadow-lg md:w-1/2 rounded-xl">
+            <h2 className="flex items-center mb-6 text-2xl font-semibold text-orange-600">
               <Coins className="mr-2 text-orange-500" size={20} />
-              Active Token Launches
+              Active RWA Token Launches
             </h2>
             {!launches || launches.length === 0 ? (
-              <p className="text-gray-500 text-center py-10">No active launches</p>
+              <p className="py-10 text-center text-gray-500">No active RWA launches</p>
             ) : (
-              <div className="space-y-4 max-h-96 overflow-y-auto pr-1">
+              <div className="pr-1 space-y-4 overflow-y-auto max-h-96">
                 {launches.map((launch, index) => (
                   <div 
                     key={index} 
-                    className="border border-orange-100 rounded-lg p-4 hover:shadow-md transition"
+                    className="p-4 transition border border-orange-100 rounded-lg hover:shadow-md"
                   >
-                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
+                    <div className="flex flex-col items-start justify-between md:flex-row md:items-center">
                       <div className="mb-3 md:mb-0">
                         <h3 className="font-bold text-orange-700">{launch.name} <span className="text-orange-500">({launch.symbol})</span></h3>
                         <p className="text-sm text-gray-600">
@@ -381,10 +381,10 @@ const MemeTokenLaunchpad = () => {
                       </div>
                       <button
                         onClick={() => purchaseToken(index)}
-                        className="bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600 transition w-full md:w-auto"
+                        className="w-full px-4 py-2 text-white transition bg-orange-500 rounded-lg hover:bg-orange-600 md:w-auto"
                         disabled={!address || !launch.isLaunched}
                       >
-                        <Coins className="inline mr-2" size={16} /> Buy Tokens
+                        <Coins className="inline mr-2" size={16} /> Buy RWA Tokens
                       </button>
                       <Dialog open={promptOpen} onClose={handlePromptClose}>
                           <DialogTitle>Enter BTC Amount</DialogTitle>
@@ -417,9 +417,9 @@ const MemeTokenLaunchpad = () => {
       </div>
       
       {/* Footer */}
-      <footer className="bg-white border-t border-orange-100 mt-10 py-6">
-        <div className="container mx-auto px-4 text-center text-gray-500 text-sm">
-          <p>&copy; 2025 Meme Token Launchpad. All rights reserved.</p>
+      <footer className="py-6 mt-10 bg-white border-t border-orange-100">
+        <div className="container px-4 mx-auto text-sm text-center text-gray-500">
+          <p>&copy; 2025 RWA Meme Launchpad. All rights reserved.</p>
           {txHash && <p className="mt-2">Latest Transaction: {txHash}</p>}
         </div>
       </footer>

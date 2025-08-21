@@ -13,21 +13,25 @@
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^13.5.0",
-    "connectkit": "^1.8.2",
+    "@walletconnect/ethereum-provider": "2.1.0",
+    "ajv": "6.12.6",
+    "ajv-formats": "1.5.1",
+    "ajv-keywords": "3.5.2",
     "ethers": "^6.13.5",
     "lucide-react": "^0.477.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-scripts": "5.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "4",
     "viem": "^2.23.7",
-    "wagmi": "^2.14.12",
+    "wagmi": "^2.16.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+  "start": "react-app-rewired start",
+  "build": "react-app-rewired build",
+  "test": "react-app-rewired test",
+  "eject": "react-scripts eject",
+  "install:vercel": "npm install --legacy-peer-deps"
   },
   "eslintConfig": {
     "extends": [
@@ -48,8 +52,20 @@
     ]
   },
   "devDependencies": {
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.7",
     "autoprefixer": "^10.4.20",
+    "cross-env": "^10.0.0",
     "postcss": "^8.5.3",
-    "tailwindcss": "^3.4.17"
+    "react-app-rewired": "^2.2.1",
+    "tailwindcss": "^3.4.17",
+    "typescript": "4.9.5"
+  },
+  "packageManager": "yarn@4.9.1+sha512.f95ce356460e05be48d66401c1ae64ef84d163dd689964962c6888a9810865e39097a5e9de748876c2e0bf89b232d583c33982773e9903ae7a76257270986538",
+  "resolutions": {
+    "@walletconnect/ethereum-provider": "2.1.0",
+    "ajv": "6.12.6",
+    "ajv-formats": "1.5.1",
+    "ajv-keywords": "3.5.2"
   }
 }
