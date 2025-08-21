@@ -1,38 +1,69 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  background: #000; /* full black background */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color: #d1d5db; /* neutral light gray text */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+}
+
+.App-logo {
+  height: 30vmin;
+  pointer-events: none;
+  filter: drop-shadow(0 0 15px #00ffb7); /* neon glow */
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 12s linear;
+  }
+}
+
+.App-header {
+  background: linear-gradient(135deg, #000 0%, #0f0f0f 100%);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0, 255, 183, 0.3),
+              0 0 40px rgba(170, 0, 255, 0.2);
+}
+
+.App-header h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #00ffb7; /* mint green primary */
+  text-shadow: 0 0 10px #00ffb7, 0 0 20px #aa00ff;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.App-header h1::before {
+  content: "🚀"; /* Emoji left of h1 */
+  font-size: 2.5rem;
 }
 
 .App-link {
-  color: #61dafb;
+  color: #ff7a00; /* neon orange */
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+.App-link:hover {
+  color: #00ffb7;
+  text-shadow: 0 0 10px #ff7a00, 0 0 20px #00ffb7;
 }
 
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
+    filter: drop-shadow(0 0 10px #aa00ff);
   }
   to {
     transform: rotate(360deg);
+    filter: drop-shadow(0 0 20px #00ffb7);
   }
 }
